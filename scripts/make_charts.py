@@ -49,9 +49,8 @@ def _axes(width: float = 8.0, height: float = 4.4):
     return fig, ax
 
 
-def _title(fig, title: str, subtitle: str) -> None:
+def _title(fig, title: str) -> None:
     fig.text(0.02, 0.96, title, fontsize=14, fontweight="bold", va="top")
-    fig.text(0.02, 0.885, subtitle, fontsize=10.5, color=INK_2, va="top")
 
 
 def _save(fig, name: str) -> None:
@@ -93,10 +92,10 @@ def chart_recall(review: dict) -> None:
     ax.set_ylim(0, 100)
     ax.set_yticks([0, 25, 50, 75, 100], ["0", "25", "50", "75", "100%"])
     ax.grid(axis="y", color=GRID, linewidth=0.8)
+    ax.set_ylabel("Phishing sites caught")
     ax.legend(frameon=False, loc="upper right", bbox_to_anchor=(1.0, 1.02), ncols=2)
-    _title(fig, "How much phishing does the model catch?",
-           "Recall at threshold 0.5, on the confirmed live phishing sites (67 to 68)")
-    fig.subplots_adjust(top=0.76, left=0.07, right=0.98, bottom=0.14)
+    _title(fig, "How much phishing does the model catch?")
+    fig.subplots_adjust(top=0.86, left=0.09, right=0.98, bottom=0.14)
     _save(fig, "recall.png")
 
 
@@ -121,12 +120,12 @@ def chart_tradeoff(review: dict) -> None:
             fontsize=10.5, color=INK_2, va="center")
     ax.set_xticks(list(xs), [str(t) for t in thresholds])
     ax.set_xlabel("Threshold (lower = flag more pages)")
+    ax.set_ylabel("Share of sites")
     ax.set_ylim(0, 105)
     ax.set_yticks([0, 25, 50, 75, 100], ["0", "25", "50", "75", "100%"])
     ax.grid(axis="y", color=GRID, linewidth=0.8)
-    _title(fig, "A lower threshold catches more, until false positives take over",
-           f"Headless browser view, reported page. {len(scores)} phishing sites, {len(benign)} good sites")
-    fig.subplots_adjust(top=0.78, left=0.07, right=0.98, bottom=0.15)
+    _title(fig, "A lower threshold catches more, until false positives take over")
+    fig.subplots_adjust(top=0.86, left=0.09, right=0.98, bottom=0.15)
     _save(fig, "tradeoff.png")
 
 
@@ -148,9 +147,9 @@ def chart_homepage(review: dict) -> None:
     ax.set_ylim(0, 108)
     ax.set_yticks([0, 25, 50, 75, 100], ["0", "25", "50", "75", "100%"])
     ax.grid(axis="y", color=GRID, linewidth=0.8)
-    _title(fig, "The homepage is enough only when the phishing is on it",
-           "Recall from the homepage alone, headless browser view, threshold 0.5")
-    fig.subplots_adjust(top=0.76, left=0.07, right=0.98, bottom=0.17)
+    ax.set_ylabel("Phishing sites caught")
+    _title(fig, "The homepage is enough only when the phishing is on it")
+    fig.subplots_adjust(top=0.86, left=0.09, right=0.98, bottom=0.17)
     _save(fig, "homepage.png")
 
 
@@ -172,10 +171,10 @@ def chart_labels(review: dict) -> None:
         ax.text(counts[key] + 1, i, str(counts[key]), va="center", fontsize=12, fontweight="bold")
     ax.set_yticks(range(len(order)), [names[key] for key in order], fontsize=11, color=INK)
     ax.set_xticks([])
+    ax.set_xlabel("Number of sites")
     ax.set_xlim(0, max(counts.values()) * 1.12)
-    _title(fig, "Only 6 in 10 feed entries were live phishing",
-           f"Review of {len(review)} sites from a public phishing feed, fetched 9 Nov 2026")
-    fig.subplots_adjust(top=0.76, left=0.42, right=0.97, bottom=0.05)
+    _title(fig, "Only 6 in 10 feed entries were live phishing")
+    fig.subplots_adjust(top=0.86, left=0.42, right=0.97, bottom=0.1)
     _save(fig, "labels.png")
 
 

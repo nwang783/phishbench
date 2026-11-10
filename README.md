@@ -11,38 +11,40 @@ The full run cost **$0.14**.
 
 ## Results
 
-### 1. The model catches most phishing when it sees the page
+### The model catches most phishing when it sees the page
 
 ![Recall by test and view](docs/charts/recall.png)
 
-- With a headless browser, the model caught **88%** of live phishing pages and flagged
-  2 of 198 good sites.
-- A headless browser (which runs the page's JavaScript) adds 6 to 9 points over plain HTML.
-- From the homepage alone, the model caught less. Chart 3 shows why.
+Each bar is the share of confirmed live phishing sites (67 to 68 sites) that got a
+score of 0.5 or more. With a headless browser, which runs the page's JavaScript, the
+model caught 88% and flagged 2 of 198 good sites. The browser adds 6 to 9 points over
+plain HTML. From the homepage alone, the model caught less; the third chart shows why.
 
-### 2. A lower threshold catches almost all of it
+### A lower threshold catches almost all of it
 
 ![Recall and false positives by threshold](docs/charts/tradeoff.png)
 
-The model gives each page a score from 0 to 1. At a threshold of 0.3, it caught **96%**
-of phishing and flagged **1.5%** of good sites. Below 0.1, false positives increase
-quickly.
+The model gives each page a score from 0 to 1, and the threshold is the score at which
+a page is flagged. This chart uses the headless browser view of the reported page, with
+68 phishing sites and 198 good sites. At a threshold of 0.3, the model caught 96% of
+phishing and flagged 1.5% of good sites. Below 0.1, false positives increase quickly.
 
-### 3. The homepage is enough only when the phishing is on it
+### The homepage is enough only when the phishing is on it
 
 ![Homepage recall by phishing location](docs/charts/homepage.png)
 
 A scanner of newly registered domains sees only the homepage. That works when the
-phishing page *is* the homepage. It fails when the phishing is on a deeper page of a
+phishing page is the homepage. It fails when the phishing is on a deeper page of a
 hacked site, a link shortener, or a shared host, where the homepage is harmless.
+(Headless browser view, threshold 0.5.)
 
-### 4. Public phishing feeds are noisy
+### Public phishing feeds are noisy
 
 ![Review of feed labels](docs/charts/labels.png)
 
-We reviewed all 128 sites from the feed. Only 75 were live phishing. The others were
-dead, hidden from scanners, or never phishing. All results above use only the
-confirmed sites, with duplicates removed (68 sites).
+We reviewed all 128 sites that the feed gave us on 9 November 2026. Only 75 were live
+phishing. The others were dead, hidden from scanners, or never phishing. All results
+above use only the confirmed sites, with duplicates removed (68 sites).
 
 ## How it works
 
