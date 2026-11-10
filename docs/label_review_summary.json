@@ -1,0 +1,8 @@
+{
+  "phishing": 75,
+  "cloaked": 8,
+  "dead": 16,
+  "clone": 8,
+  "not_phishing": 16,
+  "unclear": 5
+}

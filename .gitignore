@@ -1,0 +1,14 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Page snapshots contain live phishing HTML. Do not commit them.
+data/
+
+
+# Per-site files name third-party sites. Only total scores are published.
+labels/
+results/**/*.jsonl
+.DS_Store

@@ -1,0 +1,144 @@
+{
+  "feed_labels": {
+    "phishing_pages": 127,
+    "benign_pages": 200,
+    "refused": 0,
+    "errors": 0,
+    "input_tokens": 342577,
+    "cost_usd": 0.0343,
+    "auroc": 0.8534645669291339,
+    "thresholds": [
+      {
+        "threshold": 0.2,
+        "tp": 72,
+        "fp": 6,
+        "fn": 55,
+        "tn": 194,
+        "precision": 0.9230769230769231,
+        "recall": 0.5669291338582677,
+        "false_positive_rate": 0.03
+      },
+      {
+        "threshold": 0.5,
+        "tp": 55,
+        "fp": 1,
+        "fn": 72,
+        "tn": 199,
+        "precision": 0.9821428571428571,
+        "recall": 0.4330708661417323,
+        "false_positive_rate": 0.005
+      },
+      {
+        "threshold": 0.8,
+        "tp": 41,
+        "fp": 0,
+        "fn": 86,
+        "tn": 200,
+        "precision": 1.0,
+        "recall": 0.3228346456692913,
+        "false_positive_rate": 0.0
+      },
+      {
+        "threshold": 0.9,
+        "tp": 34,
+        "fp": 0,
+        "fn": 93,
+        "tn": 200,
+        "precision": 1.0,
+        "recall": 0.2677165354330709,
+        "false_positive_rate": 0.0
+      },
+      {
+        "threshold": 0.95,
+        "tp": 26,
+        "fp": 0,
+        "fn": 101,
+        "tn": 200,
+        "precision": 1.0,
+        "recall": 0.2047244094488189,
+        "false_positive_rate": 0.0
+      },
+      {
+        "threshold": 0.99,
+        "tp": 10,
+        "fp": 0,
+        "fn": 117,
+        "tn": 200,
+        "precision": 1.0,
+        "recall": 0.07874015748031496,
+        "false_positive_rate": 0.0
+      }
+    ]
+  },
+  "reviewed_labels": {
+    "phishing_pages": 67,
+    "benign_pages": 200,
+    "refused": 0,
+    "errors": 0,
+    "input_tokens": 293945,
+    "cost_usd": 0.0294,
+    "auroc": 0.897910447761194,
+    "thresholds": [
+      {
+        "threshold": 0.2,
+        "tp": 49,
+        "fp": 6,
+        "fn": 18,
+        "tn": 194,
+        "precision": 0.8909090909090909,
+        "recall": 0.7313432835820896,
+        "false_positive_rate": 0.03
+      },
+      {
+        "threshold": 0.5,
+        "tp": 43,
+        "fp": 1,
+        "fn": 24,
+        "tn": 199,
+        "precision": 0.9772727272727273,
+        "recall": 0.6417910447761194,
+        "false_positive_rate": 0.005
+      },
+      {
+        "threshold": 0.8,
+        "tp": 35,
+        "fp": 0,
+        "fn": 32,
+        "tn": 200,
+        "precision": 1.0,
+        "recall": 0.5223880597014925,
+        "false_positive_rate": 0.0
+      },
+      {
+        "threshold": 0.9,
+        "tp": 29,
+        "fp": 0,
+        "fn": 38,
+        "tn": 200,
+        "precision": 1.0,
+        "recall": 0.43283582089552236,
+        "false_positive_rate": 0.0
+      },
+      {
+        "threshold": 0.95,
+        "tp": 23,
+        "fp": 0,
+        "fn": 44,
+        "tn": 200,
+        "precision": 1.0,
+        "recall": 0.34328358208955223,
+        "false_positive_rate": 0.0
+      },
+      {
+        "threshold": 0.99,
+        "tp": 10,
+        "fp": 0,
+        "fn": 57,
+        "tn": 200,
+        "precision": 1.0,
+        "recall": 0.14925373134328357,
+        "false_positive_rate": 0.0
+      }
+    ]
+  }
+}
